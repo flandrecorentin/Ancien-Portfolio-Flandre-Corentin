@@ -1,0 +1,696 @@
+/* ALT+Z pour retour automatique a la ligne */
+/* Dans la présentation faire des petites etoiles/ 0et1 ou quoi qui bouge */
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+:root {
+  --color1: rgb(227, 232, 255);
+  --color2: rgb(252, 222, 222);
+  --color3: rgb(25, 0, 25);
+  --color5: rgb(25, 25, 25);
+  --color6: rgba(90, 90, 90, 0.9);
+  --color7: rgba(247, 247, 247, 0.95);
+  --color8: rgb(194, 210, 255);
+  --color9: rgb(252, 211, 158);
+  --grad1: linear-gradient(
+    32deg,
+    rgba(3, 0, 61, 1) 0%,
+    rgba(212, 21, 168, 1) 50%,
+    rgba(201, 22, 22, 1) 100%
+  );
+  --grad2: linear-gradient(
+    32deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(189, 253, 45, 1) 69%,
+    rgba(241, 253, 45, 1) 100%
+  );
+  /* background: linear-gradient(32deg, rgba(187,83,255,1) 0%, rgba(255,150,161,1) 50%, rgba(255,202,127,1) 100%); */
+}
+html {
+  scroll-behavior: smooth;
+  /* Pour un renvoie calme/deplacement "pseudo lien" */
+}
+/* * {
+  border: 2px red solid;
+} */
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font-family: "Oswald", sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--color5);
+}
+/* *************************************** */
+/* *************** NAVBAR **************** */
+/* *************************************** */
+nav {
+  position: fixed;
+  width: 100%;
+  /* overflow: hidden; */
+  background: var(--color7);
+  /* 0.97 */
+}
+header li {
+  float: right;
+  font-size: 1.3em;
+  font-family: "Advent Pro", sans-serif;
+}
+header li a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 10px;
+}
+header li a:hover {
+  transform: scale(1.15);
+}
+#home {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  float: left;
+}
+#loadingbar {
+  height: 2px;
+  width: 25%;
+  margin: 15px auto;
+  background-color: var(--color5);
+}
+nav::after {
+  margin-top: 60px;
+  content: "";
+  position: absolute;
+  background: var(--color3);
+  height: 5px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  animation: barloadinganim 10s ease-in-out forwards;
+  transform-origin: center;
+}
+@keyframes barloadinganim {
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+/* *************************************** */
+/* *************** PRINCIPAL ************* */
+/* *************************************** */
+#principal {
+  background: url(./assets/presentation-picture.jpg) fixed 50% 50%;
+  background-size: cover;
+  height: 550px;
+  width: 100%;
+}
+h1 {
+  font-family: "Bree Serif", serif;
+  font-weight: bold;
+  text-align: left;
+  font-size: 3rem;
+  color: rgb(25, 25, 25);
+  padding-left: 5%;
+  padding-top: 100px;
+  /* text-align: center; */
+  text-shadow: 3px 2px 0 #00000077;
+}
+header h3 {
+  font-family: "Bree Serif", serif;
+  font-weight: bold;
+  text-align: left;
+  font-size: 2rem;
+  color: rgb(25, 25, 25);
+  padding-left: 5%;
+  padding-top: 0px;
+  /* text-align: center; */
+  text-shadow: 3px 2px 0 #00000077;
+}
+#presentation {
+  background: var(--color1);
+  text-align: center;
+  /* padding-top: 20px; */
+  padding-bottom: 10px;
+  background-size: cover;
+}
+.separation {
+  height: 5px;
+  width: 100%;
+  margin-top: 0px;
+
+  background-color: var(--color5);
+}
+h2 {
+  padding-top: 20px;
+  font-size: 2rem;
+  font-family: "Advent Pro", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 0 #00000077;
+}
+#firstline {
+  height: 2px;
+  width: 25%;
+  margin: 20px auto;
+  background-color: #000000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+#presentation p {
+  margin: 10px 20%;
+  font-size: 1.2rem;
+  padding-bottom: 0px;
+}
+/* *************************************** */
+/* ************** CAREER ***************** */
+/* *************************************** */
+#career {
+  background: var(--color2);
+  padding-bottom: 50px;
+}
+
+#career a {
+  border: 3.5px solid var(--color5);
+  border-radius: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+  color: var(--color3);
+  background: var(--grad1);
+  margin-bottom: 50px;
+}
+#career a:hover {
+  transform: scale(1.15);
+  /* letter-spacing: 2px; */
+}
+#career a:active {
+  background: var(--grad2);
+  transform: scale(1.22);
+}
+
+#career input {
+  display: none;
+}
+#career label {
+  cursor: pointer;
+  background: white;
+  border: 3px solid var(--color5);
+  padding-left: 20px;
+  /* transform: scale(1); */
+}
+
+#career p {
+  margin-top: 30px;
+  /* position: absolute; */
+}
+#space {
+  margin-bottom: 150px;
+}
+.labels {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+.data-career1,
+.data-career2,
+.data-career3,
+.data-career4 {
+  visibility: hidden;
+  margin: 0px 25%;
+}
+
+.show1 .data-career1 {
+  visibility: visible;
+}
+.show1 .data-career2,
+.data-career3,
+.data-career4 {
+  height: 0px;
+}
+.show2 .data-career2 {
+  visibility: visible;
+}
+.show2 .data-career1,
+.data-career3,
+.data-career4 {
+  height: 0px;
+}
+.show3 .data-career3 {
+  visibility: visible;
+}
+.show3 .data-career1,
+.data-career2,
+.data-career4 {
+  height: 0px;
+}
+.show4 .data-career4 {
+  visibility: visible;
+}
+.show4 .data-career1,
+.data-career3,
+.data-career2 {
+  height: 0px;
+}
+/* *************************************** */
+/* ************* PROJECTS **************** */
+/* *************************************** */
+#projects {
+  background: var(--color8);
+}
+#secondline {
+  height: 2px;
+  width: 25%;
+  margin: 15px auto;
+  background-color: #000000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+#projects p {
+  margin: 20px 25%;
+  text-align: center;
+}
+#projects .project-if {
+  border: 3px var(--color3) solid;
+  border-radius: 10px;
+  text-align: center;
+  width: 88%;
+  margin-bottom: 20px;
+  height: 300px;
+  max-width: 440px;
+}
+#projects .projects-container {
+  display: grid;
+  padding-left: 4%;
+  left: 50%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-bottom: 10px;
+  justify-content: space-around;
+}
+#projects h4 {
+  font-size: 1.5rem;
+  text-shadow: 2px 1px 0 #00000060;
+}
+/* PROJET 1 */
+#project-if1 {
+  background: url(./assets/projects/Serre-autonome-Canon-a-mousse.png) 50%
+    center no-repeat;
+  transition: 0.5s;
+}
+#project-if1 h4 {
+  font-size: 1.4rem;
+}
+#project-if1:hover {
+  transform: scale(1.07);
+}
+#project-if1 p,
+#project-if1 a {
+  margin: 10px 10%;
+  font-size: 0.85rem;
+}
+#project-if1:hover p,
+#project-if1:hover a {
+  visibility: visible;
+  color: black;
+}
+/* PROJET 2 */
+#project-if2 {
+  background: url(./assets/projects/Jeu-JAVA.png) 50% center no-repeat;
+  transition: 0.5s;
+}
+#project-if2:hover {
+  transform: scale(1.07);
+}
+#project-if2 p,
+#project-if2 a {
+  margin: 10px 10%;
+  font-size: 0.9rem;
+}
+#project-if2:hover p,
+#project-if2:hover a {
+  visibility: visible;
+  color: black;
+}
+/* PROJET 3 */
+#project-if3 {
+  background: url(./assets/projects/Site-Internet-languages.png) 50% center
+    no-repeat;
+  transition: 0.5s;
+}
+#project-if3:hover {
+  transform: scale(1.07);
+}
+#project-if3 p,
+#project-if3 a {
+  margin: 10px 10%;
+  font-size: 0.9rem;
+}
+#project-if3:hover p,
+#project-if3:hover a {
+  visibility: visible;
+  color: black;
+}
+/* PROJET 4 */
+#project-if4 {
+  background: url(./assets/projects/Gameboy-Arduino.png) 50% center no-repeat;
+  transition: 0.5s;
+}
+#project-if4:hover {
+  transform: scale(1.07);
+}
+#project-if4 p,
+#project-if4 a {
+  margin: 10px 10%;
+  font-size: 1rem;
+}
+#project-if4:hover p,
+#project-if4:hover a {
+  visibility: visible;
+  color: black;
+}
+/* PROJET 5 */
+#project-if5 {
+  background: url(./assets/projects/voiture-autonome.PNG) 50% center no-repeat;
+  transition: 0.5s;
+}
+#project-if5:hover {
+  transform: scale(1.07);
+}
+#project-if5 h4 {
+  font-size: 1.3rem;
+}
+#project-if5 p,
+#project-if5 a {
+  margin: 10px 10%;
+  font-size: 0.9rem;
+}
+#project-if5:hover p,
+#project-if5:hover a {
+  visibility: visible;
+  color: black;
+}
+/* PROJET 6 */
+#project-if6 {
+  background: url(./assets/projects/Java.png) 50% center;
+  transition: 0.5s;
+}
+#project-if6:hover {
+  transform: scale(1.07);
+}
+
+#project-if6 p,
+#project-if6 a {
+  margin: 10px 10%;
+  font-size: 1rem;
+}
+#project-if6:hover p,
+#project-if6:hover a {
+  visibility: visible;
+  color: black;
+}
+
+.background-blur {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+.background-blur:hover {
+  backdrop-filter: blur(4px);
+}
+#project-if:hover a {
+  visibility: visible;
+  color: black;
+}
+.project-if a {
+  visibility: hidden;
+}
+.project-if p {
+  visibility: hidden;
+}
+
+#projects a {
+  border: 3.5px solid var(--color5);
+  border-radius: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--color3);
+  background: var(--grad1);
+  margin-bottom: 50px;
+}
+#projects a:hover {
+  transform: scale(1.08);
+  /* letter-spacing: 2px; */
+}
+#projects a:active {
+  background: var(--grad2);
+  transform: scale(1.1);
+}
+
+/* *************************************** */
+/* ************** HOBBIES **************** */
+/* *************************************** */
+#hobbies {
+  background-color: var(--color2);
+  padding-bottom: 60px;
+}
+#thirdline {
+  height: 2px;
+  width: 25%;
+  margin: 15px auto 30px auto;
+  background-color: #000000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+#hobbies h4 {
+  padding-left: 20px;
+  margin: 20px 0px;
+  font-family: "Advent Pro", sans-serif;
+  font-size: 2.2rem;
+  color: var(--color5);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+#hobbies .textleft {
+  text-align: right;
+  padding-left: 0px;
+  padding-right: 20px;
+}
+#hobbies p {
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+#run {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 20%;
+  margin-left: 10%;
+  height: 200px;
+  grid-template-columns: 35% 65%;
+  border-radius: 5px;
+}
+#imgrun {
+  background: url(./assets/hobbies/hobbies-course-a-pied-removebg-preview.png)
+    no-repeat center/cover;
+  max-width: 614px;
+  border: 8px ridge rgb(255, 60, 60);
+}
+#cyclisme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 10% 10px 20%;
+  height: 200px;
+  grid-template-columns: 65% 35%;
+}
+#imgcyclisme {
+  background: url(./assets/hobbies/hobbies-cyclismejpg-removebg-preview.png)
+    no-repeat center/cover;
+  border: 8px ridge rgb(142, 38, 190);
+}
+#rando {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-right: 20%;
+  margin-left: 10%;
+  height: 200px;
+  grid-template-columns: 25% 45% 35%;
+  border-radius: 5px;
+}
+#imgrando {
+  background: url(./assets/hobbies/hobbies-randonnee.png) no-repeat center/cover;
+  border: 8px ridge rgb(10, 24, 156);
+}
+#dessin {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px 10% 10px 20%;
+  height: 200px;
+  grid-template-columns: 35% 45% 25%;
+}
+#imgdessin {
+  background: url(./assets/hobbies/hobbies-dessin-removebg-preview.png)
+    no-repeat center/cover;
+  border: 8px ridge rgb(83, 75, 66);
+}
+#tennis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 20%;
+  margin-left: 10%;
+  height: 200px;
+  grid-template-columns: 35% 65%;
+  border-radius: 5px;
+}
+#imgtennis {
+  background: url(./assets/hobbies/hobbies-tennis.png) no-repeat center/cover;
+  border: 8px ridge rgb(95, 8, 62);
+}
+#letter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 10% 10px 20%;
+  height: 200px;
+  grid-template-columns: 65% 35%;
+}
+#imgletter {
+  background: url(./assets/hobbies/hobbies-littérature.png) no-repeat
+    center/cover;
+  border: 8px ridge rgb(1, 0, 36);
+}
+#hobbies .pictures {
+  text-align: center;
+  border: 2px red solid;
+}
+/* *************************************** */
+/* ***************** CONTACT ************* */
+/* *************************************** */
+#fourthline {
+  height: 2px;
+  width: 25%;
+  margin: 15px auto 0 auto;
+  background-color: #000000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+footer {
+  background: var(--color1);
+  /* text-align: center; */
+}
+footer .pprincipal {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+footer li div {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 2px yellow solid; */
+}
+footer li {
+  padding-bottom: 28px;
+}
+footer a,
+i,
+.mycontact {
+  padding-right: 10px;
+  color: #3c003c;
+  transition: 0.2s;
+}
+footer .aliencontact {
+  padding-left: 5px;
+  /* border: 3px #3c003c solid; */
+  border-radius: 10px;
+}
+footer .aliencontact:hover {
+  transform: scale(1.1);
+  color: rgb(134, 24, 24);
+}
+footer .aliencontact:active {
+  color: rgb(255, 72, 0);
+}
+footer .interaction:hover {
+  transform: scale(1.7);
+}
+footer .pvia {
+  padding-right: 5px;
+}
+form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+form input,
+textarea,
+button {
+  border: 3px var(--color5) solid;
+  border-radius: 8px;
+  /* border: none; */
+}
+textarea {
+  height: 80px;
+}
+form .formcontainer {
+  display: grid;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr; */
+  grid-template-rows:
+    "i1 i2"
+    "e e"
+    "c c"
+    "b b";
+}
+
+/* 
+
+ */
+#fifthline {
+  height: 2px;
+  width: 75%;
+  margin: 10px auto;
+  background-color: #000000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+footer #copyright {
+  font-size: 0.8rem;
+  padding-left: 20%;
+}
+/* *************************************** */
+/* **************** RESPONSIVE *********** */
+/* *************************************** */
+@media screen and (max-width: 1100px) {
+  #projects .projects-container {
+    display: grid;
+    padding-left: 4%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 718px) {
+  #projects .projects-container {
+    display: grid;
+    padding-left: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    justify-content: space-around;
+  }
+}
