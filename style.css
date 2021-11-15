@@ -524,7 +524,7 @@ h2 {
 }
 /* PROJET 5 */
 #project-if5 {
-  background: url(./assets/projects/voiture-autonome.PNG) 50% center no-repeat;
+  background: url(./assets/projects/voitureautonome.png) 50% center no-repeat;
   transition: 0.5s;
 }
 #project-if5:hover {
