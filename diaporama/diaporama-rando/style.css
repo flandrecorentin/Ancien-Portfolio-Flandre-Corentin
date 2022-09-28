@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+* {
+    box-sizing:border-box;
+}
+body{
+    background-color:  rgb(252, 222, 222);
+    margin: 0px;
+}
+#title{
+    height: 60px;
+    margin-top: 10px;
+}
+h1{
+    text-align: center;
+    padding: 0 calc(10% + 10px);
+    font-family: "Bree Serif", serif;
+}
+#back{
+    margin-top: 0px;
+    height: 10%;
+    width: 8%;
+    /* background-color: rgba(247, 247, 247, 0.95); */
+    background-color: rgba(0, 0, 0, 0.792);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* padding-top: 100px; */
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+}
+#back:hover{
+    background-color: rgba(255, 255, 255, 0.792);
+    color: black;
+}
+img{
+    /* max-width: 100%; */
+    object-fit: contain;
+    margin: auto;
+    max-height: calc(100vh - 150px);
+    max-width: 75%;
+    border: 10px ridge rgb(1, 0, 36);
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+/* Hide the images by default */
+.mySlides{
+    display: none;
+}
+
+#firstSlide {
+  display: block;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    width: 8%;
+    height: 100%;
+    /* padding: 10px; */
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.prev{
+    top: 10%;
+    height: 90%;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+.textprevnext{
+    /* background-color: red; */
+    padding-top: 50vh;
+    height: 100%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  margin-top: 10px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.5}
+  to {opacity: 1}
+}
+
+
+/* *************************************** */
+/* *****************1006-435***************** */
+@media screen and (max-width: 1006px) {
+    #title{
+        height: 60px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 0px ;
+    }
+    h1{
+        text-align: center;
+        margin-top: 0px;
+        padding-top: 0px ;
+        font-size: 1.5rem;
+        padding: 0 calc(10% + 10px);
+        font-family: "Bree Serif", serif;
+    }
+}
+
+/* *************************************** */
+/* *****************435***************** */
+@media screen and (max-width: 1006px) {
+    #title{
+        height: 60px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 0px ;
+    }
+    h1{
+        text-align: center;
+        margin-top: 0px;
+        padding-top: 0px ;
+        font-size: 1.1rem;
+        padding: 0 calc(10% + 10px);
+        font-family: "Bree Serif", serif;
+    }
+}
